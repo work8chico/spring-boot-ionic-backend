@@ -5,6 +5,9 @@ import java.io.Serializable;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
 
 import com.chico.cursomc.domain.Categoria;
 
@@ -15,6 +18,9 @@ public class CategoriaDTO implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
+	@NotEmpty(message = "Preenchimento obrigatório")
+	@Length(min=5, max=80, message="O tamanho de ver de no mínimo 5 e no máximo 80 caracteres")
 	private String nome;
 	
 	public CategoriaDTO() {		
