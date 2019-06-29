@@ -9,29 +9,32 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import com.chico.cursomc.services.DBService;
+import com.chico.cursomc.services.EmailService;
+import com.chico.cursomc.services.SmtpEmailService;
 
 @Configuration
 @Profile("dev")
 public class DevConfig {
-	
+
 	@Autowired
 	private DBService dbService;
-	
+
 	@Value("${spring.jpa.hibernate.ddl-auto}")
-	private String strategy; 
-	
+	private String strategy;
+
 	@Bean
 	public Boolean instantiateTest() throws ParseException {
-		
-		if (!"create".equals(strategy)){
-			
+
+		if (!"create".equals(strategy)) {
 			return false;
 		}
-		
+
 		dbService.instantiateTestDataBase();
 		return true;
 	}
-	
-	
 
+	@Bean
+	public EmailService emailService() {
+		return new SmtpEmailService();
+	}
 }
