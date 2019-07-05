@@ -115,13 +115,9 @@ public class DBService {
 		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
 
 		Cliente cli1 = new Cliente(null, "Maria Silva", "work.chico@gmail.com", "36378912377", TipoCliente.PESSOAFISICA, pe.encode("123"));
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/work8chico/spring-boot-ionic-backend.git
 		cli1.getTelefones().addAll(Arrays.asList("27363323", "93838393"));
 		
-		Cliente cli2 = new Cliente(null, "Ana Botelho", "assis.f.junior@gmail.com", "38104299026", TipoCliente.PESSOAFISICA);
+		Cliente cli2 = new Cliente(null, "Ana Botelho", "assis.f.junior@gmail.com", "38104299026", TipoCliente.PESSOAFISICA, pe.encode("1234"));
 		cli2.getTelefones().addAll(Arrays.asList("32326649", "20206056"));
 		cli2.addPerfil(Perfil.ADMIN);
 

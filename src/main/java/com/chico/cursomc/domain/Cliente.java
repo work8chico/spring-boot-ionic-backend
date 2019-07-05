@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
@@ -65,11 +66,11 @@ public class Cliente implements Serializable {
 		this.email = email;
 		this.cpfOuCnpj = cpfOuCnpj;
 		this.tipo = (tipo==null) ? null : tipo.getCod();
-<<<<<<< HEAD
+
 		addPerfil(Perfil.CLIENTE);
-=======
+
 		this.senha = senha;
->>>>>>> branch 'master' of https://github.com/work8chico/spring-boot-ionic-backend.git
+
 	}
 
 	public Integer getId() {
@@ -136,17 +137,17 @@ public class Cliente implements Serializable {
 		this.pedidos = pedidos;
 	}
 	
-<<<<<<< HEAD
+
 	public Set<Perfil> getPerfis(){
 		return perfis.stream().map(x -> Perfil.toEnum(x)).collect(Collectors.toSet());
 	}
 	
 	public void addPerfil(Perfil perfil) {
 		perfis.add(perfil.getCod());
-=======
+	}
+	
 	public String getSenha() {
 		return senha;
->>>>>>> branch 'master' of https://github.com/work8chico/spring-boot-ionic-backend.git
 	}
 
 	public void setSenha(String senha) {
