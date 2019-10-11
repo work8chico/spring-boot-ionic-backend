@@ -82,7 +82,7 @@ public abstract class AbstractEmailService implements EmailService {
 		SimpleMailMessage sm = new SimpleMailMessage();
 		sm.setTo(cliente.getEmail());
 		sm.setFrom(sender);
-		sm.setSubject("Você solicito uma nova senha.");
+		sm.setSubject("Você solicito uma nova senha");
 		sm.setSentDate(new Date(System.currentTimeMillis()));
 		sm.setText("Nova senha: " + newPass);
 		return sm;

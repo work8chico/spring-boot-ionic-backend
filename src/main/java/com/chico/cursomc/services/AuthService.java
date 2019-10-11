@@ -44,7 +44,7 @@ public class AuthService {
 			vet[i] = randomChar();
 		}
 		
-		return null;
+		return new String(vet);
 	}
 
 	private char randomChar() {
