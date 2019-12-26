@@ -136,7 +136,7 @@ public class ClienteService {
 		
 		URI uri = s3Service.uploadFile(multiPartFile);
 		
-		Cliente cli = repo.findOne(user.getId());
+		Cliente cli = find(user.getId());
 		cli.setImageUrl(uri.toString());
 		repo.save(cli);
 				
