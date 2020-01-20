@@ -47,6 +47,7 @@ public class Endereco implements Serializable {
 		this.bairro = bairro;
 		this.cep = cep;
 		this.cliente = cliente;
+		this.setCidade(cidade);
 	}
 
 	public Integer getId() {
