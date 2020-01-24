@@ -54,7 +54,6 @@ public class Cliente implements Serializable {
 	@CollectionTable(name = "PERFIS")
 	private Set<Integer> perfis = new HashSet<>();
 
-	@JsonIgnore
 	public Cliente() {
 		addPerfil(Perfil.CLIENTE);
 	}
