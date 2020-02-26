@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import com.chico.cursomc.services.DBService;
+import com.chico.cursomc.services.EmailService;
+import com.chico.cursomc.services.SmtpEmailService;
 
 @Configuration
 @Profile("prod")
@@ -32,6 +34,10 @@ public class ProdConfig {
 		return true;
 	}
 	
+	@Bean
+	public EmailService emailService() {
+		return new SmtpEmailService();
+	}
 	
 
 }
